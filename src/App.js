@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className='text-4xl text-primary font-bold text-center'>Hello Form Dihan</h1>
+      <Routes>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </div>
   );
 }
