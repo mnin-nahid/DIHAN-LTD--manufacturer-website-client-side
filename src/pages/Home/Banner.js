@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div class="hero h-[80vh] border-2 mt-14">
+        <div class="hero h-[80vh] mt-14">
             <div class="hero-content flex-col lg:flex-row">
                 <div>
                     <h1 class="text-5xl font-bold">Box Office News!</h1>
