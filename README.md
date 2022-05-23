@@ -1,6 +1,6 @@
-# Getting Started with DIHAN
+# Welcome to DIHAN LTD.
 
-This project was bootstrapped with [DIHAN App](https://github.com/facebook/create-react-app).
+Live link for this project [DIHAN Link](https://dihan-ltd.web.app/).
 
 ## Available Scripts
 

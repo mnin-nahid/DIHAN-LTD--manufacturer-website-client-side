@@ -1,14 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Navber from './components/Navber';
+import Footer from './pages/Home/Footer';
+import Home from './pages/Home/Home';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   return (
     <div>
-      <h1 className='text-4xl text-primary font-bold text-center'>Hello Form Dihan</h1>
+      <Navber />
       <Routes>
+        <Route path='/' element={<Home />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
