@@ -4,6 +4,8 @@ import Navber from './components/Navber';
 import Blogs from './pages/Blogs/Blogs';
 import Footer from './pages/Home/Footer';
 import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import SignUp from './pages/Login/SignUp';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/blog' element={<Blogs />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

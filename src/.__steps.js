@@ -16,7 +16,7 @@
  * 22-05-2022
  * --------------------
  * 1. env.local
- * 2. 
+ * 2. install react hook from
  * korbo--------
  * 1. navber
  * 2. login
