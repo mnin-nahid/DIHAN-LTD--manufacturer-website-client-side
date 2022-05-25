@@ -12,7 +12,7 @@ const Navber = () => {
     
 
     return (
-        <div class="navbar bg-base-300 md:px-20 fixed top-0 z-10">
+        <div class="navbar bg-base-300 md:px-20 fixed top-0 z-20 max-w-screen-2xl">
 
             <div class="flex-1">
                 <NavLink to='/'>
