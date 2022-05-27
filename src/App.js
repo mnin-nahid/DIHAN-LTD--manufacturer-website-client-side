@@ -3,6 +3,7 @@ import './App.css';
 import Navber from './components/Navber';
 import Blogs from './pages/Blogs/Blogs';
 import Dashboard from './pages/Dashboard/Dashboard';
+import MyOrder from './pages/Dashboard/MyOrder';
 import Footer from './pages/Home/Footer';
 import Home from './pages/Home/Home';
 import Purchase from './pages/Home/Purchase';
@@ -17,7 +18,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/blog' element={<Blogs />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/dashboard' element={
+            <Dashboard></Dashboard>
+        }>
+          <Route index element={<MyOrder />}></Route>
+          {/* <Route path='myreview' element={<MyReview></MyReview>}></Route> */}
+        </Route>
         <Route path='/purchase/:productId' element={<Purchase />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
