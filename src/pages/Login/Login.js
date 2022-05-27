@@ -85,7 +85,7 @@ const Login = () => {
                 </form>
             </div>
 
-            <div className='py-4'>
+            <div className='p-4'>
                 <p>Forgot your <Link className='text-primary underline' to='/signup' >password?</Link></p>
                 <p>Don't have an account? <Link className='text-primary underline' to='/signup'>Sign up here.</Link></p>
             </div>

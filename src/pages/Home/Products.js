@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Product from './Product';
 
 const Products = () => {
+
+    const [products, setProducts] = useState([]);
+
+    console.log(products);
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/product')
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    },[])
     return (
         <div>
             <h2 className='text-3xl font-bold text-center'>Our Products</h2>
-            <div>
-                <div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus temporibus necessitatibus, illum rem doloribus exercitationem velit, quo tenetur nostrum officia, suscipit alias non earum provident commodi adipisci nisi incidunt natus.</p>
-                </div>
-                <div>
-                    <p>Facilis, ullam? Nisi aspernatur veritatis alias voluptates molestias facilis ipsam sunt porro aut cumque exercitationem magni delectus quam rerum vel quae, officiis at inventore? A error reiciendis corporis commodi sunt.</p>
-                </div>
-                <div>
-                    <p>Nulla asperiores delectus nesciunt neque repellendus ipsa repellat aperiam eum quasi dicta ut magni esse distinctio, sed, eos quis recusandae vitae! Vero iusto commodi quos aspernatur numquam recusandae ab minus.</p>
-                </div>
-                <div>
-                    <p>Cupiditate, expedita repellat labore possimus natus magni illo consequuntur excepturi perspiciatis quod aspernatur autem eveniet? Quis, cupiditate quod? Sequi possimus ab tempore obcaecati autem. Iste eligendi quis qui laborum at.</p>
-                </div>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+                {
+                    products.map(product => <Product key={products._id} product={product}></Product>)
+                }
+                
             </div>
         </div>
     );

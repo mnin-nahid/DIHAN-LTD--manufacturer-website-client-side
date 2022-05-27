@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "name": "hamer1",
+        "description": "lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem",
+        "minOrder": 5,
+        "available": 99,
+        "price": 4
+    },
+    {
+        "_id": 2,
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "name": "hamer2",
+        "description": "lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem",
+        "minOrder": 5,
+        "available": 99,
+        "price": 4
+    },
+    {
+        "_id": 3,
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "name": "hamer3",
+        "description": "lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem",
+        "minOrder": 5,
+        "available": 99,
+        "price": 4
+    },
+    {
+        "_id": 4,
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "name": "hamer4",
+        "description": "lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem",
+        "minOrder": 5,
+        "available": 99,
+        "price": 4
+    },
+    {
+        "_id": 5,
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "name": "hamer5",
+        "description": "lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem",
+        "minOrder": 5,
+        "available": 99,
+        "price": 4
+    },
+    {
+        "_id": 6,
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "name": "hamer6",
+        "description": "lorem lorem lorem lorem lorem lorem lorem lorem lorem loremlorem lorem lorem lorem lorem",
+        "minOrder": 5,
+        "available": 99,
+        "price": 4
+    }
+]
