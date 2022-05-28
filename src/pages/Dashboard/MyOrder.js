@@ -1,16 +1,51 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
+    console.log(user);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('http://localhost:5000/order')
-            .then(res => res.json())
-            .then(data => setOrders(data))
+        if (user) {
+            fetch(`http://localhost:5000/order?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+            })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        return navigate('/')
+                    }
+                    return res.json()
+                })
+                .then(data => setOrders(data))
+        }
     }, [user]);
+
+    const handleDeleteOrder = id => {
+        const proceed = window.confirm('Are you sure?');
+        if (proceed) {
+            const url = `http://localhost:5000/order/${id}`;
+            fetch(url, {
+                method: "DELETE",
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining);
+                })
+        }
+    };
+    
     console.log(orders);
     return (
         <div>
@@ -31,7 +66,7 @@ const MyOrder = () => {
                                 <tr>
                                     <td>{order.productName}</td>
                                     <td>{order.quantity}</td>
-                                    <td><button className='btn btn-xs'>PAY</button> <button className='btn btn-xs btn-warning'>cancel</button></td>
+                                    <td><button className='btn btn-xs'>PAY</button> <button onClick={()=>handleDeleteOrder(order._id)} className='btn btn-xs btn-warning'>cancel</button></td>
                                     <td>Processing</td>
                                 </tr>
                             )

@@ -25,6 +25,7 @@ const AddProduct = () => {
     };
     return (
         <div>
+            <h2 className='text-2xl text-center text-primary font-bold'>Add Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div class="form-control w-full max-w-xs">

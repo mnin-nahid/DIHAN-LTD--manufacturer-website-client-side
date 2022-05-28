@@ -16,14 +16,16 @@ const Purchase = () => {
 
     const onSubmit = async (data) => {
         data.productId = productId;
-        if (data.quantity < product.minOrder) {
+        data.productName = product.name;
+        if (data.quantity < parseInt(product.minOrder)) {
             alert(`You have to order minimum ${product.minOrder}`);
             return;
         }
-        if (data.quantity > product.available) {
+        if (data.quantity > parseInt(product.available)) {
             alert("We don't have Enough quantity");
             return;
         }
+        console.log(data);
 
         //send data to the server
         const url = 'http://localhost:5000/order';
@@ -87,7 +89,7 @@ const Purchase = () => {
                     <label class="label py-0">
                         <span class="label-text">Product</span>
                     </label>
-                    <input {...register("productName")} value={product.name} type="text" class="input input-bordered w-full max-w-xs" readOnly/>
+                    <input {...register("productName")} type="text" value={product.name} class="input input-bordered w-full max-w-xs" readOnly/>
                 </div>
 
                 <div class="form-control w-full">

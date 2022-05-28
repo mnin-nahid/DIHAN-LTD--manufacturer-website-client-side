@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
+import Loading from '../../components/Loading';
 
 const Login = () => {
 
-    const { register, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit } = useForm();
     //firebase hook for password login
     const [
         signInWithEmailAndPassword,
@@ -15,13 +17,22 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    let signInError;
-
     //firebase google login hooks
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
+    const [token] = useToken(user || gUser);
+
     //handle navigation
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+    let signInError;
+
+    if (loading || gLoading) {
+        return <Loading />
+    }
+
 
     if (error || gError) {
         signInError = <small><p className='text-red-500'>{error?.message || gError?.message}</p></small>
@@ -31,8 +42,8 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     };
 
-    if (user || gUser) {
-        navigate('/')
+    if (token) {
+        navigate(from, {replace: true}) || navigate('/');
     }
 
     return (
@@ -54,8 +65,11 @@ const Login = () => {
                                 message: 'Provide a valid Email'
                             }
                         })} type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" />
-                        <label class="label py-0">
-                            <span class="label-text-alt">email error</span>
+                        <label className="label">
+                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+
+
                         </label>
                     </div>
 
@@ -73,8 +87,9 @@ const Login = () => {
                                 message: 'Must be 6 Characters or longer'
                             }
                         })} placeholder="Enter your password" class="input input-bordered w-full max-w-xs" />
-                        <label class="label py-0">
-                            <span class="label-text-alt">password error</span>
+                        <label className="label">
+                            {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                            {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                         </label>
                     </div>
 

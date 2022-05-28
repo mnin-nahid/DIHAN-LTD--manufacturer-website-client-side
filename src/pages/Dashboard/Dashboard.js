@@ -18,13 +18,13 @@ const Dashboard = () => {
             <div class="drawer-side">
                 <label for="dashboard-sidebar" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content z-10">
-                    <li><a>My Orders</a></li>
+                    <li><Link to='/dashboard'>My Orders</Link></li>
                     <li><a>Add A Review</a></li>
                     <li><a>Profile</a></li>
-                    <li><a>Manage All Orders</a></li>
+                    <li><Link to='manageallorder'>Manage All Orders</Link></li>
                     <li><Link to='addproduct'>Add A Product</Link></li>
                     <li><a>Make Admin</a></li>
-                    <li><a>Manage Products</a></li>
+                    <li><Link to='manageproducts'>Manage Products</Link></li>
                 </ul>
 
             </div>
