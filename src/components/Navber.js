@@ -22,6 +22,7 @@ const Navber = () => {
 
             <ul className='space-x-3'>
                 <li><NavLink to='/blog'>Blog</NavLink></li>
+                <li><NavLink to='/portfolio'>Portfolio</NavLink></li>
                 {user && <li><NavLink to='/dashboard'>Dashboard</NavLink></li>}
                 {
                     user ?

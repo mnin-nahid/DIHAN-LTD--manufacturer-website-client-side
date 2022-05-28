@@ -7,7 +7,6 @@ import auth from '../../firebase.init';
 const MyOrder = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
-    console.log(user);
 
     const navigate = useNavigate();
 
@@ -45,8 +44,7 @@ const MyOrder = () => {
                 })
         }
     };
-    
-    console.log(orders);
+
     return (
         <div>
             <h2 className='text-2xl text-center font-bold'>Hear is my order</h2>
