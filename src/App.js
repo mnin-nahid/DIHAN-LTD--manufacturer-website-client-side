@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navber from './components/Navber';
 import Blogs from './pages/Blogs/Blogs';
+import AddProduct from './pages/Dashboard/AddProduct';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MyOrder from './pages/Dashboard/MyOrder';
 import Footer from './pages/Home/Footer';
@@ -22,7 +23,7 @@ function App() {
             <Dashboard></Dashboard>
         }>
           <Route index element={<MyOrder />}></Route>
-          {/* <Route path='myreview' element={<MyReview></MyReview>}></Route> */}
+          <Route path='addproduct' element={<AddProduct />}></Route>
         </Route>
         <Route path='/purchase/:productId' element={<Purchase />} />
         <Route path='/login' element={<Login />} />

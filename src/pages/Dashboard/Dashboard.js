@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
@@ -22,7 +22,7 @@ const Dashboard = () => {
                     <li><a>Add A Review</a></li>
                     <li><a>Profile</a></li>
                     <li><a>Manage All Orders</a></li>
-                    <li><a>Add A Product</a></li>
+                    <li><Link to='addproduct'>Add A Product</Link></li>
                     <li><a>Make Admin</a></li>
                     <li><a>Manage Products</a></li>
                 </ul>

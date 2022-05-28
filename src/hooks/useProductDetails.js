@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 const useProductDetails = id => {
     const [product, setProduct] = useState({});
 
-    console.log(id, product);
 
     useEffect(() => {
         const url = `http://localhost:5000/product/${id}`;

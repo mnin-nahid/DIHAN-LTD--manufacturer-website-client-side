@@ -5,7 +5,6 @@ const Products = () => {
 
     const [products, setProducts] = useState([]);
 
-    console.log(products);
 
     useEffect(()=>{
         fetch('http://localhost:5000/product')

@@ -26,7 +26,6 @@ const SignUp = () => {
 
     //hendle signup
     const onSubmit = async ({email, password, name}) => {
-        console.log(email, password);
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         await console.log('update complete');

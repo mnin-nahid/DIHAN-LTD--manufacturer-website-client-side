@@ -9,16 +9,13 @@ const Purchase = () => {
 
     const { register, handleSubmit } = useForm();
     const [user] = useAuthState(auth);
-    console.log(user);
 
 
     const { productId } = useParams();
     const [product] = useProductDetails(productId);
-    console.log(productId);
 
     const onSubmit = async (data) => {
         data.productId = productId;
-        console.log(data);
         if (data.quantity < product.minOrder) {
             alert(`You have to order minimum ${product.minOrder}`);
             return;
@@ -39,7 +36,6 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
             })
 
     };
@@ -51,10 +47,10 @@ const Purchase = () => {
                 <img src={product.img} alt="" />
                 <div class="card-body">
                     <h2 class="card-title">{product.name}</h2>
-                    <h2 class="card-title">{product.price}</h2>
-                    <p>{product.description}</p>
-                    <p>{product.available}</p>
-                    <p>{product.minOrder}</p>
+                    <h2 class="card-title">Price : {product.price}$</h2>
+                    <p>Description : {product.description}</p>
+                    <p>Available : {product.available}</p>
+                    <p>Minimum Order : {product.minOrder}</p>
                 </div>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -89,7 +85,14 @@ const Purchase = () => {
 
                 <div class="form-control w-full">
                     <label class="label py-0">
-                        <span class="label-text">Phone</span>
+                        <span class="label-text">Product</span>
+                    </label>
+                    <input {...register("productName")} value={product.name} type="text" class="input input-bordered w-full max-w-xs" readOnly/>
+                </div>
+
+                <div class="form-control w-full">
+                    <label class="label py-0">
+                        <span class="label-text">Quantity</span>
                     </label>
                     <input {...register("quantity")} placeholder='Enter product quantity' type="number" class="input input-bordered w-full max-w-xs" />
                 </div>
