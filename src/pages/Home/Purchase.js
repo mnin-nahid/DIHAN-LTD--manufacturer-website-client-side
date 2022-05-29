@@ -28,7 +28,7 @@ const Purchase = () => {
         console.log(data);
 
         //send data to the server
-        const url = 'http://localhost:5000/order';
+        const url = 'https://polar-oasis-49483.herokuapp.com/order';
         fetch(url, {
             method: 'POST',
             headers: {

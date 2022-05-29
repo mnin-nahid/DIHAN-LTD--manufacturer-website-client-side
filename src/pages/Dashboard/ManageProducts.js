@@ -5,7 +5,7 @@ const ManageProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('https://polar-oasis-49483.herokuapp.com/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -13,7 +13,7 @@ const ManageProducts = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure?');
         if (proceed) {
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://polar-oasis-49483.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: "DELETE",
             })
