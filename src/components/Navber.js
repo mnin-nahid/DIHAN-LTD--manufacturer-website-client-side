@@ -12,11 +12,11 @@ const Navber = () => {
 
 
     return (
-        <div class="navbar bg-base-300 md:px-20 fixed top-0 z-20 max-w-screen-2xl">
+        <div className="navbar bg-base-300 md:px-20 fixed top-0 z-20 max-w-screen-2xl">
 
-            <div class="flex-1">
+            <div className="flex-1">
                 <NavLink to='/'>
-                    <p class="font-bold md:text-3xl"><span className='text-primary'>dihan</span>TECH</p>
+                    <p className="font-bold md:text-3xl"><span className='text-primary'>dihan</span>TECH</p>
                 </NavLink>
             </div>
 
@@ -27,15 +27,15 @@ const Navber = () => {
                 {
                     user ?
                         <li>
-                            <div class="dropdown dropdown-end">
+                            <div className="dropdown dropdown-end">
 
                                 <p tabindex='0' className='btn btn-outline'>{user.displayName || "User"}</p>
 
-                                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52">
+                                <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52">
                                     <li>
-                                        <Link to='/profile' class="justify-between">Profile<span class="badge">Coming..</span></Link>
+                                        <Link to='/profile' className="justify-between">Profile<span className="badge">Coming..</span></Link>
                                     </li>
-                                    <li><Link to='/settings' class="justify-between">Settings<span class="badge">Coming..</span></Link></li>
+                                    <li><Link to='/settings' className="justify-between">Settings<span className="badge">Coming..</span></Link></li>
                                     <li><button onClick={() => signOut(auth)} className='btn btn-outline'>Logout</button></li>
                                 </ul>
                             </div>

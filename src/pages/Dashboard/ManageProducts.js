@@ -27,8 +27,8 @@ const ManageProducts = () => {
     return (
         <div>
             <h2 className='text-3xl text-center font-bold text-primary'>Manage all products</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th>Product Image</th>

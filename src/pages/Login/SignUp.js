@@ -47,9 +47,9 @@ const SignUp = () => {
             <div className='card-body'>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label py-0">
-                            <span class="label-text">Name</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label py-0">
+                            <span className="label-text">Name</span>
                         </label>
                         <input type="text" {...register("name", {
                             required: {
@@ -60,16 +60,16 @@ const SignUp = () => {
                                 value: 3,
                                 message: 'Enter valid Name'
                             }
-                        })} placeholder="Enter your name" class="input input-bordered w-full max-w-xs" />
+                        })} placeholder="Enter your name" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
                             {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                             {errors.name?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                         </label>
                     </div>
 
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label py-0">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label py-0">
+                            <span className="label-text">Email</span>
                         </label>
                         <input type='email'{...register("email", {
                             required: {
@@ -80,16 +80,16 @@ const SignUp = () => {
                                 value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                                 message: 'Provide a valid Email'
                             }
-                        })} placeholder="Enter your email" class="input input-bordered w-full max-w-xs" />
+                        })} placeholder="Enter your email" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
                             {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                             {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                         </label>
                     </div>
 
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label py-0">
-                            <span class="label-text">Password</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label py-0">
+                            <span className="label-text">Password</span>
                         </label>
                         <input type="password"{...register("password", {
                             required: {
@@ -100,7 +100,7 @@ const SignUp = () => {
                                 value: 6,
                                 message: 'Must be 6 Characters or longer'
                             }
-                        })} placeholder="Enter your password" class="input input-bordered w-full max-w-xs" />
+                        })} placeholder="Enter your password" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
                             {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}

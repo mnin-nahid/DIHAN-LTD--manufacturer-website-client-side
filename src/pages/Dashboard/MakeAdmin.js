@@ -30,7 +30,6 @@ const MakeAdmin = () => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     alert('make admin successfull');
-                    console.log(data);
                 }
             })
     }
@@ -39,8 +38,8 @@ const MakeAdmin = () => {
     return (
         <div>
             <h2 className='text-3xl text-center text-primary font-bold'>Make Admin : {users?.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th>User Email</th>
@@ -53,7 +52,7 @@ const MakeAdmin = () => {
                                 <tr>
                                     <td>{user.email}</td>
                                     <td>{user.role !== 'admin' &&
-                                    <button class="btn btn-xs" onClick={() => makeAdmin(user.email)}>Make Admin</button>}</td>
+                                    <button className="btn btn-xs" onClick={() => makeAdmin(user.email)}>Make Admin</button>}</td>
                                 </tr>
                             )
                         }

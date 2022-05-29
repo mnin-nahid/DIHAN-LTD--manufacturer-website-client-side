@@ -51,9 +51,9 @@ const Login = () => {
             <h2 className='text-2xl text-center'>Login to your <br /> <span className='font-bold'><span className='text-primary'>dihan</span>TECH</span> account.</h2>
             <div className='card-body'>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label py-0">
-                            <span class="label-text">Email</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label py-0">
+                            <span className="label-text">Email</span>
                         </label>
                         <input {...register("email", {
                             required: {
@@ -64,7 +64,7 @@ const Login = () => {
                                 value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                                 message: 'Provide a valid Email'
                             }
-                        })} type="email" placeholder="Enter your email" class="input input-bordered w-full max-w-xs" />
+                        })} type="email" placeholder="Enter your email" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
                             {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
                             {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
@@ -73,9 +73,9 @@ const Login = () => {
                         </label>
                     </div>
 
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label py-0">
-                            <span class="label-text">Password</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label py-0">
+                            <span className="label-text">Password</span>
                         </label>
                         <input type="number" {...register("password", {
                             required: {
@@ -86,7 +86,7 @@ const Login = () => {
                                 value: 6,
                                 message: 'Must be 6 Characters or longer'
                             }
-                        })} placeholder="Enter your password" class="input input-bordered w-full max-w-xs" />
+                        })} placeholder="Enter your password" className="input input-bordered w-full max-w-xs" />
                         <label className="label">
                             {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
                             {errors.password?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
@@ -104,9 +104,9 @@ const Login = () => {
                 <p>Don't have an account? <Link className='text-primary underline' to='/signup'>Sign up here.</Link></p>
             </div>
             {signInError}
-            <div class="divider mt-0">OR</div>
+            <div className="divider mt-0">OR</div>
 
-            <button onClick={() => signInWithGoogle()} class="btn btn-wide bg-blue-700 text-white mx-auto">Continue with Google</button>
+            <button onClick={() => signInWithGoogle()} className="btn btn-wide bg-blue-700 text-white mx-auto">Continue with Google</button>
         </div>
     );
 };

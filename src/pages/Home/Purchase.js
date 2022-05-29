@@ -44,11 +44,11 @@ const Purchase = () => {
 
     return (
         <div className='mt-20 lg:flex'>
-            <div class="card lg:w-1/2 m-5 bg-base-100 shadow-xl">
+            <div className="card lg:w-1/2 m-5 bg-base-100 shadow-xl">
                 <img src={product.img} alt="" />
-                <div class="card-body">
-                    <h2 class="card-title">{product.name}</h2>
-                    <h2 class="card-title">Price : {product.price}$</h2>
+                <div className="card-body">
+                    <h2 className="card-title">{product.name}</h2>
+                    <h2 className="card-title">Price : {product.price}$</h2>
                     <p>Description : {product.description}</p>
                     <p>Available : {product.available}</p>
                     <p>Minimum Order : {product.minOrder}</p>
@@ -56,46 +56,46 @@ const Purchase = () => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div class="form-control w-full max-w-xs">
-                    <label class="label py-0">
-                        <span class="label-text">Name</span>
+                <div className="form-control w-full max-w-xs">
+                    <label className="label py-0">
+                        <span className="label-text">Name</span>
                     </label>
-                    <input type="text" {...register("name")} value={user?.displayName} class="input input-bordered w-full max-w-xs" readOnly />
+                    <input type="text" {...register("name")} value={user?.displayName} className="input input-bordered w-full max-w-xs" readOnly />
                 </div>
 
-                <div class="form-control w-full">
-                    <label class="label py-0">
-                        <span class="label-text">Email</span>
+                <div className="form-control w-full">
+                    <label className="label py-0">
+                        <span className="label-text">Email</span>
                     </label>
-                    <input {...register("email")} type="email" value={user.email} class="input input-bordered w-full max-w-xs" readOnly />
+                    <input {...register("email")} type="email" value={user.email} className="input input-bordered w-full max-w-xs" readOnly />
                 </div>
 
-                <div class="form-control w-full">
-                    <label class="label py-0">
-                        <span class="label-text">Address</span>
+                <div className="form-control w-full">
+                    <label className="label py-0">
+                        <span className="label-text">Address</span>
                     </label>
-                    <input {...register("address")} type="text" class="input input-bordered w-full max-w-xs" />
+                    <input {...register("address")} type="text" className="input input-bordered w-full max-w-xs" />
                 </div>
 
-                <div class="form-control w-full">
-                    <label class="label py-0">
-                        <span class="label-text">Phone</span>
+                <div className="form-control w-full">
+                    <label className="label py-0">
+                        <span className="label-text">Phone</span>
                     </label>
-                    <input {...register("phone")} type="number" class="input input-bordered w-full max-w-xs" />
+                    <input {...register("phone")} type="number" className="input input-bordered w-full max-w-xs" />
                 </div>
 
-                <div class="form-control w-full">
-                    <label class="label py-0">
-                        <span class="label-text">Product</span>
+                <div className="form-control w-full">
+                    <label className="label py-0">
+                        <span className="label-text">Product</span>
                     </label>
-                    <input {...register("productName")} type="text" value={product.name} class="input input-bordered w-full max-w-xs" readOnly/>
+                    <input {...register("productName")} type="text" value={product.name} className="input input-bordered w-full max-w-xs" readOnly/>
                 </div>
 
-                <div class="form-control w-full">
-                    <label class="label py-0">
-                        <span class="label-text">Quantity</span>
+                <div className="form-control w-full">
+                    <label className="label py-0">
+                        <span className="label-text">Quantity</span>
                     </label>
-                    <input {...register("quantity")} placeholder='Enter product quantity' type="number" class="input input-bordered w-full max-w-xs" />
+                    <input {...register("quantity")} placeholder='Enter product quantity' type="number" className="input input-bordered w-full max-w-xs" />
                 </div>
 
                 <input value='Confirm Order' type='submit' className='btn text-white bg-blue-700 mx-auto mt-5' />

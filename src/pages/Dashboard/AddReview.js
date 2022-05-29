@@ -35,6 +35,7 @@ const AddReview = () => {
     const onSubmit = data => {
         data.reating = currentValue;
         data.name = user.displayName;
+        data.photoURL = user.photoURL;
 
         //send review to the server
         const url = 'http://localhost:5000/review';
@@ -46,9 +47,6 @@ const AddReview = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => {
-                console.log(result);
-            })
     }
 
 
@@ -58,12 +56,11 @@ const AddReview = () => {
 
             <div className='card-body'>
                 <form onSubmit={handleSubmit(onSubmit)}>
-
                     <h2 className='text-2xl'>Hey <span className='text-primary'>{user.displayName}</span>, We are waiting for your opinion</h2>
 
                     <div className='flex text-center my-4'>
-                        <label class="label py-0">
-                            <span class="label-text">Reatings : </span>
+                        <label className="label py-0">
+                            <span className="label-text">Reatings : </span>
                         </label>
                         {
                             stars.map((_, index) => {
@@ -81,11 +78,11 @@ const AddReview = () => {
                         }
                     </div>
 
-                    <div class="form-control w-full max-w-xs">
-                        <label class="label py-0">
-                            <span class="label-text">Review</span>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label py-0">
+                            <span className="label-text">Review</span>
                         </label>
-                        <textarea name="" placeholder="What is your feedback?" {...register("review")} class="input input-bordered h-24 w-full max-w-xs"></textarea>
+                        <textarea name="" placeholder="What is your feedback?" {...register("review")} className="input input-bordered h-24 w-full max-w-xs"></textarea>
 
                     </div>
 

@@ -9,21 +9,21 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
 
     return (
-        <div class="drawer drawer-mobile mt-16">
-            <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
+        <div className="drawer drawer-mobile mt-16">
+            <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
 
-                <div class=" flex justify-end">
+                <div className=" flex justify-end">
                     <div className='flex justify-between my-2 mx-4'>
                         <h2 className='text-3xl mx-3'>Dashboard</h2>
-                        <label for="dashboard-sidebar" class="btn btn-outline btn-sm  lg:hidden">Menu</label>
+                        <label for="dashboard-sidebar" className="btn btn-outline btn-sm  lg:hidden">Menu</label>
                     </div>
                 </div>
                 <Outlet />
             </div>
-            <div class="drawer-side">
-                <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content z-10">
+            <div className="drawer-side">
+                <label for="dashboard-sidebar" className="drawer-overlay"></label>
+                <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content z-10">
                     <li><Link to='/dashboard'>My Orders</Link></li>
                     <li><Link to='addreview'>Add A Review</Link></li>
                     <li><Link to='profile'>Profile</Link></li>
