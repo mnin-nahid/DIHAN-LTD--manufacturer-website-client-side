@@ -1,12 +1,15 @@
 import React from 'react';
 import mninimg from '../../images/mnin.jpg'
+import stowage from '../../images/stowage-home.PNG'
+import gotech from '../../images/gotechPNG.PNG'
+import laptop_picker from '../../images/laptop_picker.PNG'
 
 const MyPortfolio = () => {
     return (
         <div className='mt-20'>
             <div className="hero my-5">
                 <div className="hero-content flex-col lg:flex-row lg:space-x-10">
-                    <img src={mninimg} className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={mninimg} className="max-w-sm rounded-lg shadow-2xl" alt='' />
                     <div className='w-96'>
                         <h1 className="text-4xl font-bold">Hey, <br /> <span className='text-primary text-3xl'>Wellcome To My Protfolio</span></h1>
                         <p className="pt-3">My name is <span className='text-primary font-bold'>Nahidul Islam Nayan.</span></p>
@@ -24,7 +27,7 @@ const MyPortfolio = () => {
             <h2 className='text-4xl text-center font-bold my-4'>My Last Three Project</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-10'>
                 <div className="card w-96 bg-base-100 shadow-xl image-full">
-                    <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+                    <figure><img src={stowage} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">Stowage Home</h2>
                         <p>This project made for mantaining a warehouse.</p>
@@ -34,22 +37,23 @@ const MyPortfolio = () => {
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl image-full">
-                    <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+                    <figure><img src={gotech} alt="Shoes" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className="card-title">GoTechDoctor</h2>
+                        <p>Smart life, Smart solution.
+                            Success Guaranteed.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Open</button>
+                            <button className="btn btn-primary"><a target='_' href="https://go-techdoctor.web.app/">Open</a></button>
                         </div>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl image-full">
-                    <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+                    <figure><img src={laptop_picker} alt="Shoes" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">Shoes!</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <h2 className="card-title">Laptop Picker</h2>
+                        <p>Hear you can find a laptop name that you can buy.</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Open</button>
+                            <button className="btn btn-primary"><a target='_' href="https://heartfelt-starburst-8ab0fd.netlify.app/">Open</a></button>
                         </div>
                     </div>
                 </div>

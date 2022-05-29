@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
-    const[user] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
 
     return (
@@ -24,13 +24,24 @@ const Dashboard = () => {
             <div className="drawer-side">
                 <label for="dashboard-sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content z-10">
-                    <li><Link to='/dashboard'>My Orders</Link></li>
-                    <li><Link to='addreview'>Add A Review</Link></li>
-                    <li><Link to='profile'>Profile</Link></li>
-                    <li><Link to='manageallorder'>Manage All Orders</Link></li>
-                    <li><Link to='addproduct'>Add A Product</Link></li>
-                    <li><Link to='makeadmin'>Make Admin</Link></li>
-                    <li><Link to='manageproducts'>Manage Products</Link></li>
+                    <li><Link to='/dashboard'>Profile</Link></li>
+                    {
+                        !admin && (
+                            <>
+                                <li><Link to='myorder'>My Orders</Link></li>
+                                <li><Link to='addreview'>Add A Review</Link></li>
+                            </>
+                        )
+                    }
+                    {
+                        admin && (
+                            <>
+                            <li><Link to='manageallorder'>Manage All Orders</Link></li>
+                            <li><Link to='addproduct'>Add A Product</Link></li>
+                            <li><Link to='makeadmin'>Make Admin</Link></li>
+                            <li> <Link to='manageproducts'>Manage Products</Link></li></>
+                        )
+                    }
                 </ul>
 
             </div>
