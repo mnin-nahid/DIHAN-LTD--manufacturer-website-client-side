@@ -25,7 +25,6 @@ const Purchase = () => {
             alert("We don't have Enough quantity");
             return;
         }
-        console.log(data);
 
         //send data to the server
         const url = 'https://polar-oasis-49483.herokuapp.com/order';

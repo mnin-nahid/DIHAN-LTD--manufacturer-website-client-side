@@ -36,12 +36,24 @@ const AddReview = () => {
         data.reating = currentValue;
         data.name = user.displayName;
 
-        console.log(data);
+        //send review to the server
+        const url = 'http://localhost:5000/review';
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
     }
 
 
     return (
-        <div className='border-2 w-96 mx-auto bg-base-200'>
+        <div className='border-2 w-2/3 rounded-lg mt-5 mx-auto bg-base-200'>
             <h2 className='text-2xl text-center text-primary font-bold'>Give a Review</h2>
 
             <div className='card-body'>

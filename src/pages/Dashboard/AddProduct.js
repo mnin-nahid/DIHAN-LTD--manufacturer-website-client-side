@@ -24,9 +24,9 @@ const AddProduct = () => {
 
     };
     return (
-        <div>
+        <div className='w-2/3 mx-auto bg-base-200 p-5 '>
             <h2 className='text-2xl text-center text-primary font-bold'>Add Product</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className='text-center'>
 
                 <div class="form-control w-full max-w-xs">
                     <label class="label py-0">
