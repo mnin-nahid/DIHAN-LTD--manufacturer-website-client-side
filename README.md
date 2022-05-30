@@ -2,27 +2,19 @@
 
 Live link for this project [DIHAN Link](https://dihan-ltd.web.app/).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Feachers of this site
 
-### `npm start`
+* You can Buy something
+* You can see your profile
+* You can show your orders
+* If you are admin you can added a product
+* And you can make others admin
 
-Runs the app in the development mode.
+## What technology i use
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
+* React Js
+* Firebase
+* React Router
+* Tailwind CSS
+*etc
