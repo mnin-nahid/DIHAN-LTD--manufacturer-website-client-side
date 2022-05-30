@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa';
 
 
 const Testimonial = () => {
@@ -18,7 +18,7 @@ const Testimonial = () => {
             .then(data => setReviews(data.reverse()))
     }, [])
 
-    const lastReview = reviews.slice(0, 5);
+    const lastReview = reviews.slice(0, 6);
     return (
         <div className='my-10'>
             <h2 className='text-3xl font-bold text-center'>Testimonial</h2>
