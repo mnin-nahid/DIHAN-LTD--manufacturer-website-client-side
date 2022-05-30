@@ -38,7 +38,7 @@ const AddReview = () => {
         data.photoURL = user.photoURL;
 
         //send review to the server
-        const url = 'http://localhost:5000/review';
+        const url = 'https://polar-oasis-49483.herokuapp.com/review';
         fetch(url, {
             method: 'POST',
             headers: {
