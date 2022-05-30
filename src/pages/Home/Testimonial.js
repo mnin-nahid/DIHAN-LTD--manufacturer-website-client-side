@@ -18,7 +18,7 @@ const Testimonial = () => {
             .then(data => setReviews(data.reverse()))
     }, [])
 
-    const lastReview = reviews.slice(0, 3);
+    const lastReview = reviews.slice(0, 5);
     return (
         <div className='my-10'>
             <h2 className='text-3xl font-bold text-center'>Testimonial</h2>
